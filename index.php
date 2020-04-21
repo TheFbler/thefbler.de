@@ -40,6 +40,18 @@
               Jahre alt und komme aus dem wunderschönen Markt Schönberg im
               Bayerwald. Seit über vier Jahren beschäftige ich mich mit der
               Fotografie.
+              <br/><br/>
+              Meine erste Kamera habe ich mir im Januar 2016 gekauft. Eine
+              SONY a3000 mit Kit-Objektiv und einem manuellen Aufsteckblitz.
+              Die a3000 hat mich über das Jahr hinweg auf diversen
+              Veranstaltungen begleitet. Im Juni 2016 folgte meine
+              SONY a57 mit Kit-Objektiv. Im Laufe der Zeit kam ein neuer
+              Aufsteckblitz von Metz hinzu. Ein wichtiger Kauf fand Mitte 2018
+              statt, meine erste 50mm Festbrennweite (SAL50F18). Durch dieses
+              Objektiv machte ich meine ersten Erfahrungen mit Portraits. Nach
+              über drei Jahren und tausenden Bildern wurde es erneut Zeit für
+              ein Upgrade. Die Wahl fiel auf die SONY a6000 mit dem 16-50mm
+              Kit-Objektiv und einer 50mm Vollformat Festbrennweite.
             </p>
           </li>
       </div>
