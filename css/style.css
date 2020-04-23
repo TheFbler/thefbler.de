@@ -4,7 +4,7 @@ html, body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, a, p, form, input, span {
+h1, h2, h3, h4, h5, a, p, form, input, span, textarea, label {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -196,13 +196,43 @@ header a {
 /* CONTACT */
 
 #contact form {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
 }
 
 #contact span {
   font-size: 12px;
   color: #e66262;
+}
+
+.inputTextfield {
+  -webkit-appearance: none;
+  border-style: inset;
+  border-width: 2px;
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.inputTextarea {
+  -webkit-appearance: none;
+  border-style: inset;
+  border-width: 2px;
+  padding: 5px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.btnSubmit {
+  -webkit-appearance: none;
+  padding: 10px;
+  font-size: 18px;
+  border-width: 2px;
+}
+
+.btnSubmit:hover {
+  cursor: pointer;
+  background-color: #cfcfcf;
 }
 
 /* FOOTER */
@@ -264,6 +294,10 @@ footer a i {
 }
 
 @media screen and (max-width: 750px) {
+  #contact form {
+    width: 80%;
+  }
+
   #about ul {
     flex-wrap: wrap;
   }
@@ -341,5 +375,11 @@ footer a i {
 
   .navigationItem:nth-child(1) {
       margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact form {
+    width: 90%;
   }
 }

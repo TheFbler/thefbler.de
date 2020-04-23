@@ -140,7 +140,8 @@
       	$content = $_POST["content"];
 
       	$toEmail = "fabian@thefbler.de";
-      	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content)) {
+        $mailHeaders = "From: " . $name . "<". $email .">\r\n";
+      	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content, $mailHeaders)) {
       	    $message = "Anfrage wurde erfolgreich gesendet!";
       	    $type = "success";
       	}
