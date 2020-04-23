@@ -134,15 +134,13 @@
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
       <?php
-      if(!empty($_POST["send"])) {
+      if(!empty($_POST["sendMail"])) {
       	$name = $_POST["userName"];
       	$email = $_POST["userEmail"];
-      	$subject = "Kontaktformular: Anfrage von " . $_POST["userName"];
       	$content = $_POST["content"];
 
       	$toEmail = "fabian@thefbler.de";
-      	$mailHeaders = "From: " . $name . "<". $email .">\r\n";
-      	if(mail($toEmail, $subject, $content, $mailHeaders)) {
+      	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content)) {
       	    $message = "Anfrage wurde erfolgreich gesendet!";
       	    $type = "success";
       	}
