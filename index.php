@@ -129,10 +129,11 @@
       </div>
     </section>
 
+    <!-- Kontaktformular ohne SSL Verschlüsselung der Seite zu riskant. -->
     <!--<section id="contact">
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
-      <p>Das Kontaktforular ist in Arbeit... in der Zwischenzeit einfach eine E-Mail an fabian@thefbler.de senden.</p>
+
     </section>-->
 
     <!-- Footer per PHP einfügen -->
