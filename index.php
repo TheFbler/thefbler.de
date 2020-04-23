@@ -129,12 +129,27 @@
       </div>
     </section>
 
-    <!-- Kontaktformular ohne SSL Verschlüsselung der Seite zu riskant. -->
-    <!--<section id="contact">
+    <!-- Kontaktformular ohne SSL Verschlüsselung der Seite rechtlich zu riskant. -->
+    <section id="contact">
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
+      <?php
+      if(!empty($_POST["send"])) {
+      	$name = $_POST["userName"];
+      	$email = $_POST["userEmail"];
+      	$subject = "Kontaktformular: Anfrage von " . $_POST["userName"];
+      	$content = $_POST["content"];
 
-    </section>-->
+      	$toEmail = "fabian@thefbler.de";
+      	$mailHeaders = "From: " . $name . "<". $email .">\r\n";
+      	if(mail($toEmail, $subject, $content, $mailHeaders)) {
+      	    $message = "Anfrage wurde erfolgreich gesendet!";
+      	    $type = "success";
+      	}
+      }
+      require_once "contact.php";
+      ?>
+    </section>
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>

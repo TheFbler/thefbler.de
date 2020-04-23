@@ -193,6 +193,13 @@ header a {
   }
 }
 
+/* CONTACT */
+
+#contact form {
+  width: 40%;
+  margin: 0 auto;
+}
+
 /* FOOTER */
 
 .social {
