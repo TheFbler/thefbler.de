@@ -135,16 +135,41 @@
       <hr/>
       <?php
       if(!empty($_POST["sendMail"])) {
-      	$name = $_POST["userName"];
-      	$email = $_POST["userEmail"];
-      	$content = $_POST["content"];
+        if(isset($_POST['g-recaptcha-response'])){
+          $captcha=$_POST['g-recaptcha-response'];
+        }
+        if(!$captcha){
+          $message = "Bitte beachten Sie das Captcha!";
+          $type = "error";
+        } else {//Wenn das Captcha geklickt wurde weiter prüfen
+          $ff = file('config/keys.txt');  //Secret Key nicht im Repo speichern
+          foreach($ff as $key=>$value) {
+            $ffe = explode("=", $value);//Wert vor und nach = auslesen
+            $ffa[$ffe[0]]=$ffe[1];//Key Value Paar in assozitivem Array speichern
+          }
 
-      	$toEmail = "fabian@thefbler.de";
-        $mailHeaders = "From: " . $name . "<". $email .">\r\n";
-      	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content, $mailHeaders)) {
-      	    $message = "Anfrage wurde erfolgreich gesendet!";
-      	    $type = "success";
-      	}
+          $secretKey = $ffa["captchasecretkey"];//Secret Key auslesen
+          // post request to server
+          $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+          $response = file_get_contents($url);
+          $responseKeys = json_decode($response,true);
+          // should return JSON with success as true
+          if($responseKeys["success"]) {
+            $name = $_POST["userName"];
+          	$email = $_POST["userEmail"];
+          	$content = $_POST["content"];
+
+          	$toEmail = "fabian@thefbler.de";
+            $mailHeaders = "From: " . $name . "<". $email .">\r\n";
+          	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content, $mailHeaders)) {
+          	    $message = "Anfrage wurde erfolgreich gesendet!";
+          	    $type = "success";
+          	}
+          } else {
+            $message = "Anfrage konnte nicht gesendet werden!";
+            $type = "error";
+          }
+        }
       }
       require_once "contact.php";
       ?>
@@ -156,4 +181,5 @@
     <script type="text/javascript" src="js/mobile-menu.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/lazy-load.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
