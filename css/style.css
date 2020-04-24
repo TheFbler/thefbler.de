@@ -205,6 +205,14 @@ header a {
   color: #e66262;
 }
 
+.errorContact {
+  color: #e66262;
+}
+
+.successContact {
+  color: black;
+}
+
 .inputTextfield {
   -webkit-appearance: none;
   border-style: inset;

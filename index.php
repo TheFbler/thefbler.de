@@ -140,7 +140,7 @@
         }
         if(!$captcha){
           $message = "Bitte beachten Sie das Captcha!";
-          $type = "error";
+          $type = "errorContact";
         } else {//Wenn das Captcha geklickt wurde weiter prüfen
           $ff = file('config/keys.txt');  //Secret Key nicht im Repo speichern
           foreach($ff as $key=>$value) {
@@ -163,11 +163,11 @@
             $mailHeaders = "From: " . $name . "<". $email .">\r\n";
           	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content, $mailHeaders)) {
           	    $message = "Anfrage wurde erfolgreich gesendet!";
-          	    $type = "success";
+          	    $type = "successContact";
           	}
           } else {
             $message = "Anfrage konnte nicht gesendet werden!";
-            $type = "error";
+            $type = "errorContact";
           }
         }
       }
