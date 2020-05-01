@@ -63,64 +63,55 @@
       <div class="masonryWrapper">
         <div class="masonry">
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Anna_Sonnenuntergang.jpg"
                   alt="Anna auf einer Bank bei Sonnenuntergang"
                   title="Anna bei Sonnenuntergang"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Laika.jpg"
                   alt="Laika"
                   title="Laika"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Balmoral_Zigarre.jpg"
                   alt="Balmoral Zigarre"
                   title="Balmoral Zigarre"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Moewe_Ostsee.jpg"
                   alt="Eine Möwe am Ostseestrand"
                   title="Ostseestrand Möwe"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/SONY_Alpha_Day.jpg"
                   alt="Sony Alpha Day München"
                   title="Sony Alpha Day München"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Anna_BW.jpg"
                   alt="Anna in Schwarz/Weiß"
                   title="Anna in Schwarz/Weiß"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Hochzeit_Museumsdorf.jpg"
                   alt="Hochzeitspaar im Museumsdorf"
                   title="Hochzeitspaar im Museumsdorf"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Markus_Zigarette.jpg"
                   alt="Markus mit Zigarette Lost Place Portrait"
                   title="Markus Lost Place"/>
           </div>
           <div class="brick">
-            <img  class="lazy-load"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+            <img  class="lazyload"
                   data-src="img/Waldohreule.jpg"
                   alt="Waldohreule"
                   title="Waldohreule"/>
@@ -180,6 +171,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/mobile-menu.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/lazy-load.js"></script>
+    <script src="js/lazysizes.min.js" async=""></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
