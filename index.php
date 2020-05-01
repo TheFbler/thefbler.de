@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e8ddae4d2d.js" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
       <div>
         <ul>
           <li id="portrait">
-            <img src="img/avatar.jpg" alt="Portrait von Fabian" title="Fabian Clasen">
+            <img class="lazyload" data-src="img/avatar.jpg" alt="Portrait von Fabian" title="Fabian Clasen">
           </li>
           <li id="vorstellung">
             <p>Servus, mein Name ist <strong>Fabian Clasen</strong>.
@@ -164,7 +164,7 @@
       }
       require_once "contact.php";
       ?>
-    </section>
+    </section>-->
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>
