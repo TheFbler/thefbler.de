@@ -324,6 +324,14 @@ footer a i {
 }
 
 @media screen and (max-width: 700px) {
+  #home {
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    background-image: url('../img/background_mobil.jpg');
+  }
+
   nav {
     top: 0px;
   }
