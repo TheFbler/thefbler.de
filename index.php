@@ -60,6 +60,11 @@
     <section id="portfolio">
       <h3 class="centerText">PORTFOLIO</h3>
       <hr/>
+      <!--
+        loadMoreItems sind dazwischen gemischt um die Anzeige korrekt zu
+        gestalten. Liegt an den 3 Spalten. Workaround funktioniert nur
+        auf Desktop. 
+      -->
       <div class="masonryWrapper">
         <div class="masonry">
           <div class="brick">
@@ -81,6 +86,25 @@
                   title="Balmoral Zigarre"/>
           </div>
           <div class="brick">
+            <img  class="lazyload loadMoreItems"
+                  data-src="img/Tai_Chi.jpg"
+                  alt="SANKAN Tai Chi Kurs"
+                  title="SANKAN Tai Chi Kurs"/>
+          </div>
+          <!-- Vorbereitung für weitere Bilder im Portfolio -->
+          <!--<div class="brick">
+            <img  class="lazyload loadMoreItems"
+                  data-src="img/Bergsteiger.jpg"
+                  alt="Bergsteiger Armband"
+                  title="Bergsteiger Armband"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload loadMoreItems"
+                  data-src="img/Anita_Winter.jpg"
+                  alt="Portraits im Winter"
+                  title="Portraits im Winter"/>
+          </div>-->
+          <div class="brick">
             <img  class="lazyload"
                   data-src="img/Moewe_Ostsee.jpg"
                   alt="Eine Möwe am Ostseestrand"
@@ -97,6 +121,18 @@
                   data-src="img/Anna_BW.jpg"
                   alt="Anna in Schwarz/Weiß"
                   title="Anna in Schwarz/Weiß"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload loadMoreItems"
+                  data-src="img/Bats_Football.jpg"
+                  alt="Bats Football"
+                  title="Bats Football"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload loadMoreItems"
+                  data-src="img/Hochzeit_Schoenberg.jpg"
+                  alt="Hochzeit Schönberg"
+                  title="Hochzeit Schönberg"/>
           </div>
           <div class="brick">
             <img  class="lazyload"
@@ -116,7 +152,16 @@
                   alt="Waldohreule"
                   title="Waldohreule"/>
           </div>
+          <div class="brick">
+            <img  class="lazyload loadMoreItems"
+                  data-src="img/Rebecca_Dirndl.jpg"
+                  alt="Rebecca im Dirndl"
+                  title="Rebecca im Dirndl"/>
+          </div>
         </div>
+      </div>
+      <div class="centerText">
+        <input id="loadMore" type="button" class="btn" value="Mehr laden" onclick="loadMoreItems()"></input>
       </div>
     </section>
 
@@ -164,7 +209,7 @@
       }
       require_once "contact.php";
       ?>
-    </section>-->
+    </section>
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>

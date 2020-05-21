@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, a, p, form, input, span, textarea, label {
 hr {
   width: 30px;
   height: 3px;
-  background: #9a0d13;
+  background: #4ab1ed;
   border: 0;
   margin: 0 auto 40px auto;
 }
@@ -53,7 +53,7 @@ section:nth-child(odd) {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  color: #9a0d13; /* Text color */
+  color: #4ab1ed; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   font-size: 45px; /* Increase font size */
 }
@@ -184,6 +184,14 @@ header a {
     animation-fill-mode: forwards;
 }
 
+.loadMoreItems {
+  display: none;
+}
+
+#loadMore {
+  margin-bottom: 15px;
+}
+
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -231,14 +239,14 @@ header a {
   font-size: 15px;
 }
 
-.btnSubmit {
+.btn {
   -webkit-appearance: none;
   padding: 10px;
   font-size: 18px;
   border-width: 2px;
 }
 
-.btnSubmit:hover {
+.btn:hover {
   cursor: pointer;
   background-color: #cfcfcf;
 }
