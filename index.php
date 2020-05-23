@@ -60,6 +60,7 @@
     <section id="portfolio">
       <h3 class="centerText">PORTFOLIO</h3>
       <hr/>
+      <!-- Zweites masonry um weitere Bilder nachladen zu können -->
       <div class="masonryWrapper">
         <div class="masonry">
           <div class="brick">
@@ -117,6 +118,65 @@
                   title="Waldohreule"/>
           </div>
         </div>
+        <div class="masonry loadMoreItems">
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Tai_Chi.jpg"
+                  alt="SANKAN Tai Chi Kurs"
+                  title="SANKAN Tai Chi Kurs"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Bats_Football.jpg"
+                  alt="Bats Football"
+                  title="Bats Football"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Hochzeit_Schoenberg.jpg"
+                  alt="Hochzeit Schönberg"
+                  title="Hochzeit Schönberg"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Bergsteiger.jpg"
+                  alt="Bergsteiger Armband"
+                  title="Bergsteiger Armband"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Anita_Winter.jpg"
+                  alt="Portraits im Winter"
+                  title="Portraits im Winter"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Rebecca_Dirndl.jpg"
+                  alt="Rebecca im Dirndl"
+                  title="Rebecca im Dirndl"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Markus_Sonne.jpg"
+                  alt="Markus auf einem Stein in der Sonne"
+                  title="Markus auf einem Stein in der Sonne"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Schreiadler.jpg"
+                  alt="Schreiadler"
+                  title="Schreiadler"/>
+          </div>
+          <div class="brick">
+            <img  class="lazyload"
+                  data-src="img/Spanferkel.jpg"
+                  alt="Spanferkel"
+                  title="Spanferkel"/>
+          </div>
+        </div>
+      </div>
+      <div class="centerText">
+        <input id="loadMore" type="button" class="btn" value="Mehr laden" onclick="loadMoreItems()"></input>
       </div>
     </section>
 
@@ -164,7 +224,7 @@
       }
       require_once "contact.php";
       ?>
-    </section>-->
+    </section>
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>

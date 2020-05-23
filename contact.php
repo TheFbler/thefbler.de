@@ -10,7 +10,7 @@
   <textarea name="content" id="content" class="inputTextarea" cols="60" rows="6"></textarea><br/>
   <span id="errorContent"></span><br/>
   <div class="g-recaptcha" data-sitekey="6LfEve0UAAAAAN6Pty_D5Exkj1CnDeR2UhIHS19X"></div><br/>
-  <input type="submit" name="sendMail" class="btnSubmit" value="Senden" /><br/>
+  <input type="submit" name="sendMail" class="btn" value="Senden" /><br/>
   <div id="statusMessage">
     <?php
       if (! empty($message)) {
