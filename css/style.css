@@ -253,6 +253,7 @@ header a {
   font-size: 15px;
   border-radius: initial;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .btn:hover {
