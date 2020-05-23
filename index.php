@@ -176,7 +176,7 @@
         </div>
       </div>
       <div class="centerText">
-        <input id="loadMore" type="button" class="btn" value="Mehr laden" onclick="loadMoreItems()"></input>
+        <a id="loadMore" class="btn" onclick="loadMoreItems()" target="_blank" rel="nofollow noopener">Mehr laden</a>
       </div>
     </section>
 

@@ -239,16 +239,27 @@ header a {
   font-size: 15px;
 }
 
+/* Button Styling */
+
 .btn {
   -webkit-appearance: none;
-  padding: 10px;
-  font-size: 18px;
-  border-width: 2px;
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px;
+  border: 4px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  font-size: 15px;
+  border-radius: initial;
+  margin-bottom: 15px;
 }
 
 .btn:hover {
-  cursor: pointer;
-  background-color: #cfcfcf;
+  color: #ffffff !important;
+  background: #4ab1ed;
+  border-color: #4ab1ed !important;
+  transition: all 0.4s ease 0s;
 }
 
 /* FOOTER */
