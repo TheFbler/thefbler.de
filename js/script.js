@@ -53,7 +53,7 @@ function validateContactForm() {
   return formValid;
 }
  function loadMoreItems() {
-   $(".loadMoreItems:hidden").slice(0, 4).slideDown();
+   $(".loadMoreItems:hidden").slice(0, 1).slideDown();
    if($(".loadMoreItems:hidden").length == 0) {
      $("#loadMore").css('display','none');
    }
