@@ -446,6 +446,8 @@ footer a i {
 @media screen and (max-width: 480px) {
   #failureBox {
     width: 100%;
+    max-width: 100%;
+    padding: 0;
     top: 55%;
     left: 0;
     margin-left: 0
