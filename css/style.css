@@ -81,6 +81,23 @@ section:nth-child(odd) {
   padding: 0;
 }
 
+/* Scroll Progress Bar */
+
+/* The progress container (grey background) */
+.progress-container {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 8px;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #4ab1ed;
+  width: 0%;
+}
+
 /* Header */
 
 nav {

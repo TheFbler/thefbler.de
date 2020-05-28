@@ -52,9 +52,21 @@ function validateContactForm() {
 
   return formValid;
 }
- function loadMoreItems() {
-   $(".loadMoreItems:hidden").slice(0, 1).slideDown();
-   if($(".loadMoreItems:hidden").length == 0) {
-     $("#loadMore").css('display','none');
-   }
- }
+
+function loadMoreItems() {
+  $(".loadMoreItems:hidden").slice(0, 1).slideDown();
+  if($(".loadMoreItems:hidden").length == 0) {
+    $("#loadMore").css('display','none');
+  }
+}
+
+window.onscroll = function() {
+  updateScrollProgress()
+};
+
+function updateScrollProgress() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("scrollProgressBar").style.width = scrolled + "%";
+}
