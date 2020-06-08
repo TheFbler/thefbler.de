@@ -176,6 +176,12 @@
         </div>
       </div>
       <div class="centerText">
+        <div class="sk-folding-cube">
+          <div class="sk-cube1 sk-cube"></div>
+          <div class="sk-cube2 sk-cube"></div>
+          <div class="sk-cube4 sk-cube"></div>
+          <div class="sk-cube3 sk-cube"></div>
+        </div>
         <a id="loadMore" class="btn" onclick="loadMoreItems()" target="_blank" rel="nofollow noopener">Mehr laden</a>
       </div>
     </section>
