@@ -48,10 +48,11 @@ section:nth-child(odd) {
 /* Loading Animation --> https://tobiasahlin.com/spinkit/ */
 .sk-folding-cube {
   display: none; /* Cubes erstmal nicht anzeigen */
-  margin: 20px auto;
+  margin: 40px auto;
   width: 40px;
   height: 40px;
   position: relative;
+  top: -40px; /* Bessere Platzierung der Ladeanimation */
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
@@ -322,7 +323,7 @@ header a {
 }
 
 #loadMore {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 @keyframes fadeIn {

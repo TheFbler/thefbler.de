@@ -83,7 +83,6 @@ observer = new MutationObserver(mCallback);
 function mCallback(mutations) {
   for (let mutation of mutations) {
     if (mutation.type === 'attributes') {
-      console.log(`Mutation Detected: Valid attribute has been toggled. Attribute name is: ${mutation.attributeName}.`);
       if(mutation.attributeName == 'class') {
         if($('.lazyload').length == 0) {
           $(".sk-folding-cube").css('display', 'none');
