@@ -72,7 +72,7 @@ section h3 {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #4ab1ed;
 }
 
 input:focus + .slider {

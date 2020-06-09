@@ -66,6 +66,19 @@ window.onscroll = function() {
   updateScrollProgress()
 };
 
+function toggleDarkMode(obj) {
+  if($(obj).is(":checked")) {
+    console.log("Triggered Dark-Mode ;)");
+    $(".logo").css('background', 'url(\'../img/logo_black.png\') center no-repeat');
+    $("header a").css('color', 'black');
+    $(".navWrapper").css('background-color', 'rgba(255,255,255,0.3)');
+    $(".navigationLink").css('border-top', '1px solid black');
+    $(".navigationLink").css('border-bottom', '1px solid black');
+  } else {
+    console.log("No more Dark-Mode :(");
+  }
+}
+
 function updateScrollProgress() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;

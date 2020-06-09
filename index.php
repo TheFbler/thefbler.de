@@ -17,7 +17,7 @@
     <section id="home">
       <!-- Rounded switch -->
       <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" onchange="toggleDarkMode(this)">
         <span class="slider round"></span>
       </label>
     </section>
