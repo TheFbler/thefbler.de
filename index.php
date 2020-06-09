@@ -14,7 +14,13 @@
     <?php echo file_get_contents("header.html"); ?>
 
     <!-- HOME -->
-    <section id="home"></section>
+    <section id="home">
+      <!-- Rounded switch -->
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </section>
 
     <!-- ABOUT -->
 
