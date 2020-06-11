@@ -69,13 +69,23 @@ window.onscroll = function() {
 function toggleDarkMode(obj) {
   if($(obj).is(":checked")) {
     console.log("Triggered Dark-Mode ;)");
-    $(".logo").css('background', 'url(\'../img/logo_black.png\') center no-repeat');
+    /*$(".logo").css('background', 'url(\'../thefbler/img/logo_black.png\') center no-repeat');
     $("header a").css('color', 'black');
     $(".navWrapper").css('background-color', 'rgba(255,255,255,0.3)');
     $(".navigationLink").css('border-top', '1px solid black');
-    $(".navigationLink").css('border-bottom', '1px solid black');
+    $(".navigationLink").css('border-bottom', '1px solid black');*/
+    $("section").css("background-color", "#282c33");
+    $("section:nth-child(odd)").css("background-color", "#494c52");
+    $("#vorstellung").css("color", "white");
+    $("section h3").css("color", "white");
+    $("form label").css("color", "white");
   } else {
     console.log("No more Dark-Mode :(");
+    $("section").css("background-color", "white");
+    $("section:nth-child(odd)").css("background-color", "#ebeef2");
+    $("#vorstellung").css("color", "black");
+    $("section h3").css("color", "black");
+    $("form label").css("color", "black");
   }
 }
 
