@@ -68,118 +68,37 @@
       <hr/>
       <!-- Zweites masonry um weitere Bilder nachladen zu können -->
       <div class="masonryWrapper">
-        <div class="masonry">
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Anna_Sonnenuntergang.jpg"
-                  alt="Anna auf einer Bank bei Sonnenuntergang"
-                  title="Anna bei Sonnenuntergang"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Laika.jpg"
-                  alt="Laika"
-                  title="Laika"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Balmoral_Zigarre.jpg"
-                  alt="Balmoral Zigarre"
-                  title="Balmoral Zigarre"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Moewe_Ostsee.jpg"
-                  alt="Eine Möwe am Ostseestrand"
-                  title="Ostseestrand Möwe"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/SONY_Alpha_Day.jpg"
-                  alt="Sony Alpha Day München"
-                  title="Sony Alpha Day München"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Anna_BW.jpg"
-                  alt="Anna in Schwarz/Weiß"
-                  title="Anna in Schwarz/Weiß"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Hochzeit_Museumsdorf.jpg"
-                  alt="Hochzeitspaar im Museumsdorf"
-                  title="Hochzeitspaar im Museumsdorf"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Markus_Zigarette.jpg"
-                  alt="Markus mit Zigarette Lost Place Portrait"
-                  title="Markus Lost Place"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Waldohreule.jpg"
-                  alt="Waldohreule"
-                  title="Waldohreule"/>
-          </div>
-        </div>
-        <div class="masonry loadMoreItems">
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Tai_Chi.jpg"
-                  alt="SANKAN Tai Chi Kurs"
-                  title="SANKAN Tai Chi Kurs"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Bats_Football.jpg"
-                  alt="Bats Football"
-                  title="Bats Football"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Hochzeit_Schoenberg.jpg"
-                  alt="Hochzeit Schönberg"
-                  title="Hochzeit Schönberg"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Bergsteiger.jpg"
-                  alt="Bergsteiger Armband"
-                  title="Bergsteiger Armband"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Anita_Winter.jpg"
-                  alt="Portraits im Winter"
-                  title="Portraits im Winter"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Rebecca_Dirndl.jpg"
-                  alt="Rebecca im Dirndl"
-                  title="Rebecca im Dirndl"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Markus_Sonne.jpg"
-                  alt="Markus auf einem Stein in der Sonne"
-                  title="Markus auf einem Stein in der Sonne"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Schreiadler.jpg"
-                  alt="Schreiadler"
-                  title="Schreiadler"/>
-          </div>
-          <div class="brick">
-            <img  class="lazyload"
-                  data-src="img/Spanferkel.jpg"
-                  alt="Spanferkel"
-                  title="Spanferkel"/>
-          </div>
-        </div>
+        <?php
+          $verzeichnis = "img/masonry";
+          // Test, ob es sich um ein Verzeichnis handelt
+          if (is_dir($verzeichnis)) {
+            // einlesen der Verzeichnisses
+            $files = scandir($verzeichnis);
+            sort($files);
+            foreach($files as $file) {
+              if($file !== "." && $file !== "..") {
+                if($file === '1_masonry') {
+                  echo "<div class=\"masonry loadMoreItems\">";
+                } else {
+                  echo "<div class=\"masonry\">";
+                }
+
+                $verzeichnis2 = $verzeichnis . "/" . $file;
+                $files2 = scandir($verzeichnis2);
+                sort($files2);
+                foreach($files2 as $file2) {
+                  // Aktuelles Verzeichnis . und darüberliegendes .. aussortieren
+                  if($file2 !== "." && $file2 !== "..") {
+                    echo "<div class=\"brick\">";
+                    echo "<img class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . substr($file2, 2) . "\"/>";
+                    echo "</div>";
+                  }
+                }
+                echo "</div>";
+              }
+            }
+          }
+          ?>
       </div>
       <div class="centerText">
         <div class="sk-folding-cube">
