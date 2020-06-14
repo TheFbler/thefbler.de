@@ -115,7 +115,7 @@ section:nth-child(odd) {
 /* Loading Animation --> https://tobiasahlin.com/spinkit/ */
 .sk-folding-cube {
   display: none; /* Cubes erstmal nicht anzeigen */
-  margin: 40px auto;
+  margin: 40px auto 0px auto;
   width: 40px;
   height: 40px;
   position: relative;
