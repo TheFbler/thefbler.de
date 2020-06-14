@@ -443,6 +443,7 @@ header a {
 /* Button Styling */
 
 .btn {
+  background-color: transparent;
   -webkit-appearance: none;
   color: #4ab1ed !important;
   text-transform: uppercase;

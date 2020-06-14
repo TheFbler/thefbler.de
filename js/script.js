@@ -74,14 +74,15 @@ function toggleDarkMode(obj) {
     $(".navWrapper").css('background-color', 'rgba(255,255,255,0.3)');
     $(".navigationLink").css('border-top', '1px solid black');
     $(".navigationLink").css('border-bottom', '1px solid black');*/
-    $("section").css("background-color", "#282c33");
+    $("body").css("background-color", "#282c33")
     $("section:nth-child(odd)").css("background-color", "#494c52");
     $("#vorstellung").css("color", "white");
     $("section h3").css("color", "white");
     $("form label").css("color", "white");
+    $("body").css("background-color", "#282c33")
   } else {
     console.log("No more Dark-Mode :(");
-    $("section").css("background-color", "white");
+    $("body").css("background-color", "white");
     $("section:nth-child(odd)").css("background-color", "#ebeef2");
     $("#vorstellung").css("color", "black");
     $("section h3").css("color", "black");
