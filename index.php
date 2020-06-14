@@ -78,9 +78,9 @@
             foreach($files as $file) {
               if($file !== "." && $file !== "..") {
                 if($file === '1_masonry') {
-                  echo "<div class=\"masonry loadMoreItems\">";
-                } else {
                   echo "<div class=\"masonry\">";
+                } else {
+                  echo "<div class=\"masonry loadMoreItems\">";
                 }
 
                 $verzeichnis2 = $verzeichnis . "/" . $file;
