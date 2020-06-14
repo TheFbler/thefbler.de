@@ -614,6 +614,11 @@ footer a i {
   .navigationItem:nth-child(1) {
       margin-top: 15px;
   }
+
+  .switch {
+    left: 80%;
+    top: 75%;
+  }
 }
 
 @media screen and (max-width: 600px) {
