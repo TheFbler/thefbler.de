@@ -97,7 +97,7 @@ function updateScrollProgress() {
   document.getElementById("scrollProgressBar").style.width = scrolled + "%";
 }
 
-let loadItems = document.querySelector('.loadMoreItems'),
+let loadItems = document.querySelector('.masonryWrapper'),
 options = {
   attributes: true,
   subtree: true
@@ -107,8 +107,9 @@ observer = new MutationObserver(mCallback);
 function mCallback(mutations) {
   for (let mutation of mutations) {
     if (mutation.type === 'attributes') {
-      if(mutation.attributeName == 'class') {
-        if($('.lazyload').length == 0) {
+      if(mutation.attributeName === 'class') {
+        if($('.lazyload').length === $(".loadMoreItems:hidden").length * 9
+          || $('.lazyload').length === 0) {
           $(".sk-folding-cube").css('display', 'none');
         }
       }
