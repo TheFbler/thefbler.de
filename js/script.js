@@ -4,6 +4,7 @@ mybutton = document.getElementById("backToTopBtn");
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
+/* Einblenden des Back To Top Buttons */
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -18,6 +19,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+/* Validierung des Kontaktformulars */
 function validateContactForm() {
   var formValid = true;
 
@@ -66,6 +68,7 @@ window.onscroll = function() {
   updateScrollProgress()
 };
 
+/* Über den Slider das Farbdesign der Seite auf dunkel abändern */
 function toggleDarkMode(obj) {
   if($(obj).is(":checked")) {
     console.log("Triggered Dark-Mode ;)");
@@ -118,3 +121,45 @@ function mCallback(mutations) {
 }
 
 observer.observe(loadItems, options);
+
+/* Nach Cookiename suchen und Ergebnis zurück liefern */
+function readCookie(n) {
+  a = document.cookie;
+  res = '';
+
+  while(a != '') {
+    cookiename = a.substring(0,a.search('='));
+    cookiewert = a.substring(a.search('=')+1,a.search(';'));
+
+    if(cookiewert == '') {
+      cookiewert = a.substring(a.search('=')+1,a.length);
+    }
+
+    if(n == cookiename){
+      res = cookiewert;
+    }
+
+    i = a.search(';')+1;
+
+    if(i == 0){
+      i = a.length
+    }
+
+    a = a.substring(i,a.length);
+  }
+
+  return(res)
+}
+
+/* Cookiename, Wert und Ablauf in Millisekunden übergeben und speichern */
+function writeCookie(n, w, e) {
+  var a = new Date();
+  a = new Date(a.getTime() +e);
+  document.cookie = n+'='+w+'; expires='+a.toGMTString()+';';
+}
+
+/*  Ablaufdatum weit in die Vergangenheit setzen
+    und den Browser selbst löschen lassen */
+function deleteCookie(n) {
+  document.cookie = n+'=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+}
