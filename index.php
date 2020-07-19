@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <div id="cookieBanner">
+      <a id="aktivateCookies" class="btn" onclick="aktivateCookies()" target="_blank" rel="nofollow noopener">Alle Cookies akzeptieren</a>
+    </div>
     <i onclick="topFunction()" id="backToTopBtn" class="fas fa-chevron-circle-up"></i>
     <!-- Header per PHP einfügen -->
     <?php echo file_get_contents("header.html"); ?>

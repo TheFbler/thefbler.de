@@ -1,3 +1,10 @@
+cookiesAllowed = false;
+
+function aktivateCookies() {
+  cookiesAllowed = true;
+  $("#cookieBanner").css('display','none');
+}
+
 //Get the button:
 mybutton = document.getElementById("backToTopBtn");
 
@@ -77,13 +84,15 @@ function toggleDarkMode(obj) {
     $(".navWrapper").css('background-color', 'rgba(255,255,255,0.3)');
     $(".navigationLink").css('border-top', '1px solid black');
     $(".navigationLink").css('border-bottom', '1px solid black');*/
-    $("body").css("background-color", "#282c33")
+    writeCookie("darkmode", "true", 15778800000);
+    $("body").css("background-color", "#282c33");
     $("section:nth-child(odd)").css("background-color", "#494c52");
     $("#vorstellung").css("color", "white");
     $("section h3").css("color", "white");
     $("form label").css("color", "white");
     $("body").css("background-color", "#282c33")
   } else {
+    writeCookie("darkmode", "false", 15778800000);
     console.log("No more Dark-Mode :(");
     $("body").css("background-color", "white");
     $("section:nth-child(odd)").css("background-color", "#ebeef2");
@@ -124,42 +133,50 @@ observer.observe(loadItems, options);
 
 /* Nach Cookiename suchen und Ergebnis zurück liefern */
 function readCookie(n) {
-  a = document.cookie;
-  res = '';
+  if(cookiesAllowed) {
+    a = document.cookie;
+    res = '';
 
-  while(a != '') {
-    cookiename = a.substring(0,a.search('='));
-    cookiewert = a.substring(a.search('=')+1,a.search(';'));
+    while(a != '') {
+      cookiename = a.substring(0,a.search('='));
+      cookiewert = a.substring(a.search('=')+1,a.search(';'));
 
-    if(cookiewert == '') {
-      cookiewert = a.substring(a.search('=')+1,a.length);
+      if(cookiewert == '') {
+        cookiewert = a.substring(a.search('=')+1,a.length);
+      }
+
+      if(n == cookiename){
+        res = cookiewert;
+      }
+
+      i = a.search(';')+1;
+
+      if(i == 0){
+        i = a.length
+      }
+
+      a = a.substring(i,a.length);
     }
 
-    if(n == cookiename){
-      res = cookiewert;
-    }
-
-    i = a.search(';')+1;
-
-    if(i == 0){
-      i = a.length
-    }
-
-    a = a.substring(i,a.length);
+    return(res);
+  } else {
+    return("");
   }
-
-  return(res)
 }
 
 /* Cookiename, Wert und Ablauf in Millisekunden übergeben und speichern */
 function writeCookie(n, w, e) {
-  var a = new Date();
-  a = new Date(a.getTime() +e);
-  document.cookie = n+'='+w+'; expires='+a.toGMTString()+';';
+  if(cookiesAllowed) {
+    var a = new Date();
+    a = new Date(a.getTime() +e);
+    document.cookie = n+'='+w+'; expires='+a.toGMTString()+';';
+  }
 }
 
 /*  Ablaufdatum weit in die Vergangenheit setzen
     und den Browser selbst löschen lassen */
 function deleteCookie(n) {
-  document.cookie = n+'=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+  if(cookiesAllowed) {
+    document.cookie = n+'=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+  }
 }
