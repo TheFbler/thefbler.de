@@ -1,8 +1,33 @@
-//Get the button:
+// Get the button:
 mybutton = document.getElementById("backToTopBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
+
+// Activate dark mode automatically
+$(document).ready(function() {
+        $.ajax({
+          url: "https://api.sunrise-sunset.org/json?lat=48.8516044&lng=13.34991355",
+          type: "GET",
+          success: function(result) {
+            //console.log(result);
+            var now = moment();
+            var sunset = moment.utc(result.results.sunset, "hh:mm:ss a");
+            var sunrise = moment.utc(result.results.sunrise, "hh:mm:ss a");
+
+            if(now > sunrise && now < sunset) { //no dark mode
+              $("#darkModeToggle").prop("checked", false);
+            } else if (now < sunrise || now > sunset) {//dark mode
+              $("#darkModeToggle").prop("checked", true);
+            }
+
+            toggleDarkMode($("#darkModeToggle"));
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      });
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
