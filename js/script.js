@@ -6,28 +6,32 @@ window.onscroll = function() {scrollFunction()};
 
 // Activate dark mode automatically
 $(document).ready(function() {
-        $.ajax({
-          url: "https://api.sunrise-sunset.org/json?lat=48.8516044&lng=13.34991355",
-          type: "GET",
-          success: function(result) {
-            //console.log(result);
-            var now = moment();
-            var sunset = moment.utc(result.results.sunset, "hh:mm:ss a");
-            var sunrise = moment.utc(result.results.sunrise, "hh:mm:ss a");
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    $("#darkModeToggle").prop("checked", true);
+  } else {
+    $.ajax({
+      url: "https://api.sunrise-sunset.org/json?lat=48.8516044&lng=13.34991355",
+      type: "GET",
+      success: function(result) {
+        //console.log(result);
+        var now = moment();
+        var sunset = moment.utc(result.results.sunset, "hh:mm:ss a");
+        var sunrise = moment.utc(result.results.sunrise, "hh:mm:ss a");
 
-            if(now > sunrise && now < sunset) { //no dark mode
-              $("#darkModeToggle").prop("checked", false);
-            } else if (now < sunrise || now > sunset) {//dark mode
-              $("#darkModeToggle").prop("checked", true);
-            }
-
-            toggleDarkMode($("#darkModeToggle"));
-          },
-          error: function(error) {
-            console.log(error);
-          }
-        });
-      });
+        if(now > sunrise && now < sunset) { //no dark mode
+          $("#darkModeToggle").prop("checked", false);
+        } else if (now < sunrise || now > sunset) {//dark mode
+          $("#darkModeToggle").prop("checked", true);
+        }
+      },
+      error: function(error) {
+        console.log(error);
+      }
+    });
+  }
+  //Nach setzen der Checked Property die Dark Mode Methode aufrufen
+  toggleDarkMode($("#darkModeToggle"));
+});
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
