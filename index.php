@@ -17,7 +17,7 @@
     <section id="home">
       <!-- Rounded switch -->
       <label class="switch">
-        <input type="checkbox" onchange="toggleDarkMode(this)">
+        <input id="darkModeToggle" type="checkbox" onchange="toggleDarkMode(this)">
         <span class="slider round"></span>
       </label>
     </section>
@@ -163,5 +163,6 @@
     <script type="text/javascript" src="js/mobile-menu.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script src="js/lazysizes.min.js" async=""></script>
+    <script src="js/moment.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
