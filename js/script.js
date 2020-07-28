@@ -25,7 +25,7 @@ function gcd(a, b) {
 }
 
 var decimalToFraction = function (_decimal) {
-  if(_decimal < 0) {// Belichtungszeit Werte über 0 nicht berechnen
+  if(_decimal < 1) {// Belichtungszeit Werte über 1 nicht berechnen
   	var top		= _decimal.toString().replace(/\d+[.]/, '');
   	var bottom	= Math.pow(10, top.length);
   	if (_decimal > 1) {
