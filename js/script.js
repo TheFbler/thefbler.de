@@ -15,10 +15,28 @@ function getExif(img) {
         var brennw = EXIF.getTag(this, "FocalLength");
         console.log("ISO: " + iso +
                     "\nBlende: " + blende +
-                    "\nBelichtungszeit: " + belzeit) + "s" +
+                    "\nBelichtungszeit: " + decimalToFraction(belzeit).display + "s" +
                     "\nBrennweite: " + brennw + "mm")
     });
 }
+
+function gcd(a, b) {
+	return (b) ? gcd(b, a % b) : a;
+}
+
+var decimalToFraction = function (_decimal) {
+	var top		= _decimal.toString().replace(/\d+[.]/, '');
+	var bottom	= Math.pow(10, top.length);
+	if (_decimal > 1) {
+		top	= +top + Math.floor(_decimal) * bottom;
+	}
+	var x = gcd(top, bottom);
+	return {
+		top		: (top / x),
+		bottom	: (bottom / x),
+		display	: (top / x) + '/' + (bottom / x)
+	};
+};
 
 // Activate dark mode automatically
 $(document).ready(function() {
