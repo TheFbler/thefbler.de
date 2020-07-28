@@ -402,6 +402,20 @@ header a {
   }
 }
 
+/* Container mit Bild und Text */
+.containerPortfolio {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Links Oben EXIF */
+.topLeftExif {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
 /* CONTACT */
 
 #contact form {

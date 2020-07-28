@@ -89,8 +89,11 @@
                 foreach($files2 as $file2) {
                   // Aktuelles Verzeichnis . und darüberliegendes .. aussortieren
                   if($file2 !== "." && $file2 !== "..") {
+                    $str = substr($file2, 2);
+                    $strId = substr($str, 0, strpos($str, "."));
                     echo "<div class=\"brick\">";
-                    echo "<img onclick=\"getExif(this)\" class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . substr($file2, 2) . "\"/>";
+                    echo "<img onclick=\"getExif(this," . $strId . ")\" class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . $str . "\"/>";
+                    echo "<div class=\"topLeftExif\" id=\"" . $strId . "\"></div>";
                     echo "</div>";
                   }
                 }

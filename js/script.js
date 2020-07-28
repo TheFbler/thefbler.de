@@ -7,7 +7,7 @@ mybutton = document.getElementById("backToTopBtn");
 window.onscroll = function() {scrollFunction()};
 
 // Exif Daten für übergebenes Bild auslesen
-function getExif(img) {
+function getExif(img,divid) {
   EXIF.getData(img, function() {
         var marke = EXIF.getTag(this, "Make")
         var model = EXIF.getTag(this, "Model");
@@ -19,7 +19,12 @@ function getExif(img) {
                     "\nISO: " + iso +
                     "\nBlende: " + blende +
                     "\nBelichtungszeit: " + getExposureTime(belzeit).display + "s" +
-                    "\nBrennweite: " + brennw + "mm")
+                    "\nBrennweite: " + brennw + "mm");
+        $(divid).html("Kamera: " + marke + " " + model +
+                    "<br/>ISO: " + iso +
+                    "<br/>Blende: " + blende +
+                    "<br/>Belichtungszeit: " + getExposureTime(belzeit).display + "s" +
+                    "<br/>Brennweite: " + brennw + "mm");
     });
 }
 
