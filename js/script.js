@@ -9,11 +9,14 @@ window.onscroll = function() {scrollFunction()};
 // Exif Daten für übergebenes Bild auslesen
 function getExif(img) {
   EXIF.getData(img, function() {
-        var iso = EXIF.getTag(this, "BrightnessValue");
+        var marke = EXIF.getTag(this, "Make")
+        var model = EXIF.getTag(this, "Model");
+        var iso = EXIF.getTag(this, "ISOSpeedRatings");
         var blende = EXIF.getTag(this, "FNumber");
         var belzeit = EXIF.getTag(this, "ExposureTime");
         var brennw = EXIF.getTag(this, "FocalLength");
-        console.log("ISO: " + iso +
+        console.log("Kamera: " + marke + " " + model +
+                    "\nISO: " + iso +
                     "\nBlende: " + blende +
                     "\nBelichtungszeit: " + decimalToFraction(belzeit).display + "s" +
                     "\nBrennweite: " + brennw + "mm")
