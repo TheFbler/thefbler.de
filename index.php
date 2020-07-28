@@ -90,7 +90,7 @@
                   // Aktuelles Verzeichnis . und darüberliegendes .. aussortieren
                   if($file2 !== "." && $file2 !== "..") {
                     echo "<div class=\"brick\">";
-                    echo "<img class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . substr($file2, 2) . "\"/>";
+                    echo "<img onclick=\"getExif(this)\" class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . substr($file2, 2) . "\"/>";
                     echo "</div>";
                   }
                 }
@@ -164,5 +164,6 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script src="js/lazysizes.min.js" async=""></script>
     <script src="js/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>

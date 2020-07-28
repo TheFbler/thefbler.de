@@ -1,8 +1,24 @@
+window.onload=getExif;
+
 // Get the button:
 mybutton = document.getElementById("backToTopBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
+
+// Exif Daten für übergebenes Bild auslesen
+function getExif(img) {
+  EXIF.getData(img, function() {
+        var iso = EXIF.getTag(this, "BrightnessValue");
+        var blende = EXIF.getTag(this, "FNumber");
+        var belzeit = EXIF.getTag(this, "ExposureTime");
+        var brennw = EXIF.getTag(this, "FocalLength");
+        console.log("ISO: " + iso +
+                    "\nBlende: " + blende +
+                    "\nBelichtungszeit: " + belzeit) + "s" +
+                    "\nBrennweite: " + brennw + "mm")
+    });
+}
 
 // Activate dark mode automatically
 $(document).ready(function() {
