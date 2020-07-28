@@ -39,6 +39,8 @@ var decimalToFraction = function (_decimal) {
   	};
   } else {
     return {
+      top		: _decimal,
+  		bottom	: _decimal,
       display : _decimal
     };
   }
