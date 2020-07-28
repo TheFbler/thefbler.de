@@ -9,12 +9,17 @@ window.onscroll = function() {scrollFunction()};
 // Exif Daten für übergebenes Bild auslesen
 function getExif(img,divid) {
   EXIF.getData(img, function() {
+        // Alle div Container leeren
+        $(".exifPosition").html("");
+        $(".exifPosition").css('background-color', 'transparent');
+        // EXIF Daten auslesen
         var marke = EXIF.getTag(this, "Make")
         var model = EXIF.getTag(this, "Model");
         var iso = EXIF.getTag(this, "ISOSpeedRatings");
         var blende = EXIF.getTag(this, "FNumber");
         var belzeit = EXIF.getTag(this, "ExposureTime");
         var brennw = EXIF.getTag(this, "FocalLength");
+        // Ausgabe der Informationen
         console.log("Kamera: " + marke + " " + model +
                     "\nISO: " + iso +
                     "\nBlende: " + blende +
@@ -25,6 +30,7 @@ function getExif(img,divid) {
                     "<br/>Blende: " + blende +
                     "<br/>Belichtungszeit: " + getExposureTime(belzeit).display + "s" +
                     "<br/>Brennweite: " + brennw + "mm");
+        $(divid).css('background-color', 'rgba(255,255,255,0.5)');
     });
 }
 

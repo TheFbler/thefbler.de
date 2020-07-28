@@ -410,10 +410,11 @@ header a {
 }
 
 /* Links Oben EXIF */
-.topLeftExif {
+.exifPosition {
   position: absolute;
-  top: 8px;
-  left: 16px;
+  top: 0px;
+  left: 0px;
+  padding: 16px;
 }
 
 /* CONTACT */
