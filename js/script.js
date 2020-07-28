@@ -25,17 +25,23 @@ function gcd(a, b) {
 }
 
 var decimalToFraction = function (_decimal) {
-	var top		= _decimal.toString().replace(/\d+[.]/, '');
-	var bottom	= Math.pow(10, top.length);
-	if (_decimal > 1) {
-		top	= +top + Math.floor(_decimal) * bottom;
-	}
-	var x = gcd(top, bottom);
-	return {
-		top		: (top / x),
-		bottom	: (bottom / x),
-		display	: (top / x) + '/' + (bottom / x)
-	};
+  if(_decimal < 0) {// Belichtungszeit Werte über 0 nicht berechnen
+  	var top		= _decimal.toString().replace(/\d+[.]/, '');
+  	var bottom	= Math.pow(10, top.length);
+  	if (_decimal > 1) {
+  		top	= +top + Math.floor(_decimal) * bottom;
+  	}
+  	var x = gcd(top, bottom);
+  	return {
+  		top		: (top / x),
+  		bottom	: (bottom / x),
+  		display	: (top / x) + '/' + (bottom / x)
+  	};
+  } else {
+    return {
+      display : _decimal
+    };
+  }
 };
 
 // Activate dark mode automatically
