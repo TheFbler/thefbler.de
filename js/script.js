@@ -1,8 +1,64 @@
+window.onload=getExif;
+
 // Get the button:
 mybutton = document.getElementById("backToTopBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
+
+// Exif Daten für übergebenes Bild auslesen
+function getExif(img,divid) {
+  EXIF.getData(img, function() {
+        // Alle div Container leeren
+        $(".exifPosition").html("");
+        $(".exifPosition").css('background-color', 'transparent');
+        // EXIF Daten auslesen
+        var marke = EXIF.getTag(this, "Make")
+        var model = EXIF.getTag(this, "Model");
+        var iso = EXIF.getTag(this, "ISOSpeedRatings");
+        var blende = EXIF.getTag(this, "FNumber");
+        var belzeit = EXIF.getTag(this, "ExposureTime");
+        var brennw = EXIF.getTag(this, "FocalLength");
+        // Ausgabe der Informationen
+        console.log("Kamera: " + marke + " " + model +
+                    "\nISO: " + iso +
+                    "\nBlende: " + blende +
+                    "\nBelichtungszeit: " + getExposureTime(belzeit).display + "s" +
+                    "\nBrennweite: " + brennw + "mm");
+        $(divid).html("Kamera: " + marke + " " + model +
+                    "<br/>ISO: " + iso +
+                    "<br/>Blende: " + blende +
+                    "<br/>Belichtungszeit: " + getExposureTime(belzeit).display + "s" +
+                    "<br/>Brennweite: " + brennw + "mm");
+        $(divid).css('background-color', 'rgba(255,255,255,0.5)');
+    });
+}
+
+function gcd(a, b) {
+	return (b) ? gcd(b, a % b) : a;
+}
+
+var getExposureTime = function (_decimal) {
+  if(_decimal < 1) {// Belichtungszeit Werte über 1 nicht berechnen
+  	var top		= _decimal.toString().replace(/\d+[.]/, '');
+  	var bottom	= Math.pow(10, top.length);
+  	if (_decimal > 1) {
+  		top	= +top + Math.floor(_decimal) * bottom;
+  	}
+  	var x = gcd(top, bottom);
+  	return {
+  		top		: (top / x),
+  		bottom	: (bottom / x),
+  		display	: (top / x) + '/' + (bottom / x)
+  	};
+  } else {
+    return {
+      top		: _decimal,
+  		bottom	: _decimal,
+      display : _decimal
+    };
+  }
+};
 
 // Activate dark mode automatically
 $(document).ready(function() {

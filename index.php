@@ -89,8 +89,11 @@
                 foreach($files2 as $file2) {
                   // Aktuelles Verzeichnis . und darüberliegendes .. aussortieren
                   if($file2 !== "." && $file2 !== "..") {
+                    $str = substr($file2, 2);
+                    $strId = substr($str, 0, strpos($str, "."));
                     echo "<div class=\"brick\">";
-                    echo "<img class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . substr($file2, 2) . "\"/>";
+                    echo "<img onclick=\"getExif(this," . $strId . ")\" class=\"lazyload\" data-src=\"" . $verzeichnis2 . "/" . $file2 . "\" alt=\"" . $str . "\"/>";
+                    echo "<div class=\"exifPosition\" id=\"" . $strId . "\"></div>";
                     echo "</div>";
                   }
                 }
@@ -164,5 +167,6 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script src="js/lazysizes.min.js" async=""></script>
     <script src="js/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>

@@ -32,6 +32,9 @@ A link to the main article is not necessary, but will always be considered as a 
   margin-bottom: 30px;
   display: inline-block; /* Fix the misalignment of items */
   vertical-align: top; /* Keep the item on the very top */
+  /* Für den Text in den Bildern relevant */
+  position: relative;
+  cursor: pointer;
 }
 
 /* Masonry image effects */
