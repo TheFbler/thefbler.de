@@ -9,7 +9,7 @@ $(document).ready(function() {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     $("#darkModeToggle").prop("checked", true);
     toggleDarkMode($("#darkModeToggle"));
-  } else {
+  } /*else {
     $.ajax({
       url: "https://api.sunrise-sunset.org/json?lat=48.8516044&lng=13.34991355",
       type: "GET",
@@ -30,7 +30,7 @@ $(document).ready(function() {
         console.log(error);
       }
     });
-  }
+  }*/
 });
 
 function scrollFunction() {
