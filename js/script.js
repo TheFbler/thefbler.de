@@ -18,7 +18,7 @@ function getExif(img) {
         console.log("Kamera: " + marke + " " + model +
                     "\nISO: " + iso +
                     "\nBlende: " + blende +
-                    "\nBelichtungszeit: " + decimalToFraction(belzeit).display + "s" +
+                    "\nBelichtungszeit: " + getExposureTime(belzeit).display + "s" +
                     "\nBrennweite: " + brennw + "mm")
     });
 }
@@ -27,7 +27,7 @@ function gcd(a, b) {
 	return (b) ? gcd(b, a % b) : a;
 }
 
-var decimalToFraction = function (_decimal) {
+var getExposureTime = function (_decimal) {
   if(_decimal < 1) {// Belichtungszeit Werte über 1 nicht berechnen
   	var top		= _decimal.toString().replace(/\d+[.]/, '');
   	var bottom	= Math.pow(10, top.length);
