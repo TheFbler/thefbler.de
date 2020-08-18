@@ -60,6 +60,12 @@ var getExposureTime = function (_decimal) {
   }
 };
 
+setTimeout(function(){$("#socialMedia").css('display','block');}, /*90000*/2000)
+
+function noMoreSocialMedia() {
+  $("#socialMedia").css('display','none');
+}
+
 // Activate dark mode automatically
 $(document).ready(function() {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
