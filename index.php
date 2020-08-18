@@ -11,12 +11,12 @@
   <body>
     <i onclick="topFunction()" id="backToTopBtn" class="fas fa-chevron-circle-up"></i>
     <div id="socialMedia">
-      <p>Besucht auch meine Social Media Kanäle:</p>
+      <a id="noMoreSocial" onclick="noMoreSocialMedia()" target="_blank" rel="nofollow noopener">x</a>
+      <p>Besucht auch meine Social Media Kanäle</p>
       <a class="social2" target="_blank" rel="noopener" href="https://www.facebook.com/fabian.clasen.3"><i class="fab fa-facebook"></i></a>
       <a class="social2" target="_blank" rel="noopener" href="https://www.instagram.com/thefbler"><i class="fab fa-instagram"></i></a>
       <a class="social2" target="_blank" rel="noopener" href="https://www.xing.com/profile/Fabian_Clasen2"><i class="fab fa-xing"></i></a>
       <a class="social2" target="_blank" rel="noopener" href="https://twitter.com/thefbler"><i class="fab fa-twitter"></i></a><br/>
-      <a id="noMoreSocial" class="btnWhite" onclick="noMoreSocialMedia()" target="_blank" rel="nofollow noopener">Nein, danke!</a>
       <img id="socialImage" class="lazyload" data-src="img/avatar.jpg" alt="Portrait von Fabian" title="Fabian Clasen">
     </div>
     <!-- Header per PHP einfügen -->
