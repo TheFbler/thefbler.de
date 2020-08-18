@@ -60,7 +60,8 @@ var getExposureTime = function (_decimal) {
   }
 };
 
-setTimeout(function(){$("#socialMedia").css('display','block');}, /*90000*/2000)
+// Einblenden des Social Media Banners nach 1,5 Minuten (90000)
+setTimeout(function(){$("#socialMedia").css('display','block');}, 90000/*2000*/)
 
 function noMoreSocialMedia() {
   $("#socialMedia").css('display','none');
