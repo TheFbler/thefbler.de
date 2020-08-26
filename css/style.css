@@ -218,6 +218,43 @@ section:nth-child(odd) {
   font-size: 45px; /* Increase font size */
 }
 
+#socialMedia {
+  background-color: #4ab1ed;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  position: fixed;
+  height: 190px;
+  width: 400px;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+  color: white;
+  text-align: center;
+  display: none;
+}
+
+#socialMedia p {
+  margin-top: 30px;
+}
+
+#socialMedia img {
+  margin-top: 16px;
+}
+
+#noMoreSocial {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#socialImage {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
 #failureBox {
   color: white;
   background-color: rgba(0,0,0,0.3);
@@ -489,6 +526,13 @@ header a {
   opacity: 0.8;
 }
 
+.social2 {
+  padding: 5px;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
 footer {
   width: 100%;
   height: 112px;
@@ -650,5 +694,11 @@ footer a i {
     top: 55%;
     left: 0;
     margin-left: 0
+  }
+
+  #socialMedia {
+    width: 350px;
+    right: 50%;
+    margin-right: -175px;
   }
 }
