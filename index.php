@@ -10,7 +10,7 @@
 
   <body>
     <i onclick="topFunction()" id="backToTopBtn" class="fas fa-chevron-circle-up"></i>
-    <div id="socialMedia">
+    <div class="tilt-in-fwd-br" id="socialMedia">
       <a id="noMoreSocial" onclick="noMoreSocialMedia()" target="_blank" rel="nofollow noopener">x</a>
       <p>Besucht auch meine Social Media Kanäle</p>
       <a class="social2" target="_blank" rel="noopener" href="https://www.facebook.com/fabian.clasen.3"><i class="fab fa-facebook"></i></a>
