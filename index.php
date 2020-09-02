@@ -11,7 +11,7 @@
   <body>
     <i onclick="topFunction()" id="backToTopBtn" class="fas fa-chevron-circle-up"></i>
     <div class="tilt-in-fwd-br" id="socialMedia">
-      <a id="noMoreSocial" onclick="noMoreSocialMedia()" target="_blank" rel="nofollow noopener">x</a>
+      <a id="noMoreSocial" onclick="noMoreSocialMedia()" target="_blank" rel="nofollow noopener"><i class="far fa-times-circle"></i></a>
       <p>Besucht auch meine Social Media Kanäle</p>
       <a class="social2" target="_blank" rel="noopener" href="https://www.facebook.com/fabian.clasen.3"><i class="fab fa-facebook"></i></a>
       <a class="social2" target="_blank" rel="noopener" href="https://www.instagram.com/thefbler"><i class="fab fa-instagram"></i></a>
