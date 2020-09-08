@@ -524,6 +524,17 @@ header a {
   color: #f0f0f0;
   font-size: 30px;
   opacity: 0.8;
+  transition-duration: .15s;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.68,-.55,.265,1.55);
+}
+
+.social:nth-child(even) .fab:hover {
+  transform: rotate(6deg) scale(1.2) translateY(-20%);
+}
+
+.social:nth-child(odd) .fab:hover {
+  transform: rotate(354deg) scale(1.2) translateY(-20%);
 }
 
 .social2 {

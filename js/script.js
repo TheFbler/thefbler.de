@@ -64,7 +64,8 @@ var getExposureTime = function (_decimal) {
 setTimeout(function(){$("#socialMedia").css('display','block');}, 90000/*2000*/)
 
 function noMoreSocialMedia() {
-  $("#socialMedia").css('display','none');
+  /*$("#socialMedia").css('display','none');*/
+  $("#socialMedia").addClass('fade-out-br');
 }
 
 // Activate dark mode automatically

@@ -124,11 +124,11 @@
     </section>
 
     <!-- Kontaktformular ohne SSL Verschlüsselung der Seite rechtlich zu riskant. -->
-    <section id="contact">
+    <!-- <section id="contact">
       <h3 class="centerText">KONTAKT</h3>
-      <hr/>
+      <hr/> -->
       <?php
-      if(!empty($_POST["sendMail"])) {
+      /*if(!empty($_POST["sendMail"])) {
         if(isset($_POST['g-recaptcha-response'])){
           $captcha=$_POST['g-recaptcha-response'];
         }
@@ -165,9 +165,9 @@
           }
         }
       }
-      require_once "contact.php";
+      require_once "contact.php";*/
       ?>
-    </section>
+    <!-- </section> -->
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>
