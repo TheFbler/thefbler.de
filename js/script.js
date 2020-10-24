@@ -197,12 +197,17 @@ options = {
 },
 observer = new MutationObserver(mCallback);
 
+// Gesamtanzahl der Bilder - der noch nicht sichtbaren ergibt die Anzahl
+// der Bilder welche geladen sein müssen bevor die Ladeanimation verschwinden
+// kann (Da auch das Bild in Über lazyloaded wird und das erste masonry nicht
+// die Klasse loadMoreItems besitzt muss noch 10 abgezogen werden)
 function mCallback(mutations) {
   for (let mutation of mutations) {
     if (mutation.type === 'attributes') {
       if(mutation.attributeName === 'class') {
-        if($('.lazyload').length === $(".loadMoreItems:hidden").length * 9
-          || $('.lazyload').length === 0) {
+        if($('.lazyloaded').length - 10 ==
+            ($('.loadMoreItems').children('div').length
+            - $('.loadMoreItems:hidden').children('div').length)) {
           $(".sk-folding-cube").css('display', 'none');
         }
       }
