@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e8ddae4d2d.js" crossorigin="anonymous"></script>
     <title>TheFbler Fotografie</title>
 
