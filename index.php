@@ -52,7 +52,7 @@
               ?>
 
               Jahre alt und komme aus dem wunderschönen Markt Schönberg im
-              Bayerwald. Seit über vier Jahren beschäftige ich mich mit der
+              Bayerwald. Seit über fünf Jahren beschäftige ich mich mit der
               Fotografie.
               <br/><br/>
               Meine erste Kamera habe ich mir im Januar 2016 gekauft. Eine
@@ -65,7 +65,8 @@
               Objektiv machte ich meine ersten Erfahrungen mit Portraits. Nach
               über drei Jahren und tausenden Bildern wurde es erneut Zeit für
               ein Upgrade. Die Wahl fiel auf die SONY a6000 mit dem 16-50mm
-              Kit-Objektiv und einer 50mm Vollformat Festbrennweite.
+              Kit-Objektiv und einer 50mm Vollformat Festbrennweite. Hier möchte
+              ich euch einen Einblick in mein Portfolio geben.
             </p>
           </li>
       </div>
@@ -122,11 +123,11 @@
       </div>
     </section>
 
-    <section id="contact">
+    <!--<section id="contact">
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
       <?php
-      if(!empty($_POST["sendMail"])) {
+      /*if(!empty($_POST["sendMail"])) {
         if(isset($_POST['g-recaptcha-response'])){
           $captcha=$_POST['g-recaptcha-response'];
         }
@@ -163,9 +164,9 @@
           }
         }
       }
-      require_once "contact.php";
+      require_once "contact.php";*/
       ?>
-    </section>
+    </section>-->
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>
