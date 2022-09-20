@@ -18,7 +18,7 @@ jobs:
         server: 185.146.238.70
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: httpdocs/
+        server-dir: httpdocs/thefbler/
         exclude: |
           **/.git*
           **/.git*/**
