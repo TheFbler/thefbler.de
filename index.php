@@ -176,5 +176,4 @@
     <script src="js/lazysizes.min.js" async=""></script>
     <script src="js/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
