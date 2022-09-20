@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <script src="https://kit.fontawesome.com/e8ddae4d2d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
     <title>TheFbler Fotografie</title>
 
     <?php echo file_get_contents("head.html") ?>
