@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e8ddae4d2d.js" crossorigin="anonymous"></script>
     <title>TheFbler Fotografie</title>
-
     <?php echo file_get_contents("head.html") ?>
   </head>
 

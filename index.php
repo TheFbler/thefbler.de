@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
     <title>TheFbler Fotografie</title>
-
     <?php echo file_get_contents("head.html") ?>
   </head>
 
