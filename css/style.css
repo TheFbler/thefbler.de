@@ -81,7 +81,7 @@ hr {
 }
 
 .fa-bars {
-  display: none;
+  display: none !important;
 }
 
 section {
@@ -719,7 +719,7 @@ footer a i {
 
   .fa-bars {
     color: white;
-    display: block;
+    display: block !important;
     font-size: 22px;
     cursor: pointer;
     position: absolute;
