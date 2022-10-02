@@ -143,9 +143,9 @@
                   'Kontaktformular: Neue Anfrage',
                   $message,
                   $mailHeaders)) {
-            echo '<div id=\"statusMessage\"><p class=\"successContact\">Ihre Anfrage wurde erfolgreich gesendet!</p></div>';
+            echo '<div id="statusMessage"><p class="successContact centerText">Ihre Anfrage wurde erfolgreich gesendet!</p></div>';
           } else {
-            echo '<div id=\"statusMessage\"><p class=\"errorContact\">Leider gab es ein Problem beim Verarbeiten Ihrer Anfrage, bitte versuchen Sie es später erneut!</p></div>';
+            echo '<div id="statusMessage"><p class="errorContact centerText">Leider gab es ein Problem beim Verarbeiten Ihrer Anfrage, bitte versuchen Sie es später erneut!</p></div>';
           }
         }
 

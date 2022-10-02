@@ -95,6 +95,10 @@ section h3 {
   padding-bottom: 20px;
 }
 
+section a {
+  color: #f0f0f0;
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -534,15 +538,20 @@ header a {
   color: #e66262;
 }
 
-.successContact {
-  color: black;
-}
-
 .inputTextfield {
   -webkit-appearance: none;
   border-style: inset;
   border-width: 2px;
   width: 100%;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.inputTextfieldSmall {
+  -webkit-appearance: none;
+  border-style: inset;
+  border-width: 2px;
+  width: 30%;
   font-size: 15px;
   padding: 5px;
 }

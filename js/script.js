@@ -117,6 +117,8 @@ function validateContactForm() {
   var formName = $('#name').val();
   var formMail = $('#email').val();
   var formContent = $('#content').val();
+  var datenschutz = $('#datenschutzCheckbox');
+  var spamschutz = $('#spamschutz').val();
   var regExMail = new RegExp("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
 
   if(formName == "") {
@@ -129,18 +131,39 @@ function validateContactForm() {
     formValid = false;
     $("#errorMail").html("Pflichtfeld");
     $("#email").css('border', '#e66262 1px solid');
+  } else {
+    $("#errorMail").html("");
   }
 
   if (!regExMail.test(formMail)) {
     $("#errorMail").html("Keine gültige E-Mail Adresse");
     $("#userEmail").css('border', '#e66262 1px solid');
     valid = false;
+  } else {
+    $("#errorMail").html("");
   }
 
   if(formContent == "") {
     formValid = false;
     $("#errorContent").html("Pflichtfeld");
     $("#content").css('border', '#e66262 1px solid');
+  } else {
+    $("#errorContent").html("");
+  }
+
+  if(!datenschutz.is(':checked')) {
+    formValid = false;
+    $("#errorDatenschutz").html("Bitte beachten Sie die Datenschutzerklärung");
+  } else {
+    $("#errorDatenschutz").html("");
+  }
+
+  if(spamschutz !== "2") {
+    formValid = false;
+    $("#errorSpamschutz").html("Bitte beachten Sie die Aufgabe zum Spamschutz");
+    $("#spamschutz").css('border', '#e66262 1px solid');
+  } else {
+    $("#errorSpamschutz").html("");
   }
 
   return formValid;
@@ -170,7 +193,10 @@ function toggleDarkMode(obj) {
     $("body").css("background-color", "#282c33")
     $("section:nth-child(odd)").css("background-color", "#494c52");
     $("#vorstellung").css("color", "white");
+    $("#contact").css("color", "white");
+    $("#successContact").css("color", "white");
     $("section h3").css("color", "white");
+    $("section a").css("color", "white");
     $("form label").css("color", "white");
     $("body").css("background-color", "#282c33")
   } else {
@@ -178,7 +204,10 @@ function toggleDarkMode(obj) {
     $("body").css("background-color", "white");
     $("section:nth-child(odd)").css("background-color", "#ebeef2");
     $("#vorstellung").css("color", "black");
+    $("#contact").css("color", "black");
+    $("#successContact").css("color", "white");
     $("section h3").css("color", "black");
+    $("section a").css("color", "black");
     $("form label").css("color", "black");
   }
 }
