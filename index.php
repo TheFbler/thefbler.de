@@ -121,50 +121,37 @@
       </div>
     </section>
 
-    <!--<section id="contact">
+    <section id="contact">
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
       <?php
-      /*if(!empty($_POST["sendMail"])) {
-        if(isset($_POST['g-recaptcha-response'])){
-          $captcha=$_POST['g-recaptcha-response'];
-        }
-        if(!$captcha){
-          $message = "Bitte beachten Sie das Captcha!";
-          $type = "errorContact";
-        } else {//Wenn das Captcha geklickt wurde weiter prüfen
-          $ff = file('config/keys.txt');  //Secret Key nicht im Repo speichern
-          foreach($ff as $key=>$value) {
-            $ffe = explode("=", $value);//Wert vor und nach = auslesen
-            $ffa[$ffe[0]]=$ffe[1];//Key Value Paar in assozitivem Array speichern
-          }
+        if(!empty($_POST['userName'])
+            && !empty($_POST['userEmail'])  && !empty($_POST['content'])) {
+          $name = $_POST['userName'];
+          $mail = $_POST['userEmail'];
+          $message = 'Name: ' . $name . ' // ' . $_POST['content'];
 
-          $secretKey = $ffa["captchasecretkey"];//Secret Key auslesen
-          // post request to server
-          $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
-          $response = file_get_contents($url);
-          $responseKeys = json_decode($response,true);
-          // should return JSON with success as true
-          if($responseKeys["success"]) {
-            $name = $_POST["userName"];
-          	$email = $_POST["userEmail"];
-          	$content = $_POST["content"];
+          $mailHeaders = array(
+                           'From' => $mail,
+                           'Reply-To' => $mail,
+                           'X-Mailer' => 'PHP/' . phpversion(),
+                           'MIME-Version' => '1.0',
+                           'Content-Type' => 'text/plain; charset=UTF-8'
+                         );
 
-          	$toEmail = "fabian@thefbler.de";
-            $mailHeaders = "From: " . $name . "<". $email .">\r\n";
-          	if(mail($toEmail, "Kontaktformular: Anfrage von " . $_POST["userName"], $content, $mailHeaders)) {
-          	    $message = "Anfrage wurde erfolgreich gesendet!";
-          	    $type = "successContact";
-          	}
+          if(mail('fabian@thefbler.de',
+                  'Kontaktformular: Neue Anfrage',
+                  $message,
+                  $mailHeaders)) {
+            echo '<div id=\"statusMessage\"><p class=\"successContact\">Ihre Anfrage wurde erfolgreich gesendet!</p></div>';
           } else {
-            $message = "Anfrage konnte nicht gesendet werden!";
-            $type = "errorContact";
+            echo '<div id=\"statusMessage\"><p class=\"errorContact\">Leider gab es ein Problem beim Verarbeiten Ihrer Anfrage, bitte versuchen Sie es später erneut!</p></div>';
           }
         }
-      }
-      require_once "contact.php";*/
+
+        require_once "contact.php";
       ?>
-    </section>-->
+    </section>
 
     <!-- Footer per PHP einfügen -->
     <?php echo file_get_contents("footer.html"); ?>
