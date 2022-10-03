@@ -766,7 +766,8 @@ footer a i {
 
 @media screen and (max-width: 600px) {
   #contact form {
-    width: 90%;
+    margin: 0px 0px 0px 30px;
+    max-width: 90%;
   }
 }
 
