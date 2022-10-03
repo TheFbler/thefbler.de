@@ -1,5 +1,7 @@
 window.onload=getExif;
 
+verweildauer = false;
+
 // Get the button:
 mybutton = document.getElementById("backToTopBtn");
 
@@ -63,6 +65,9 @@ var getExposureTime = function (_decimal) {
 // Einblenden des Social Media Banners nach 1,5 Minuten (90000)
 setTimeout(function(){$("#socialMedia").css('display','block');}, 90000/*2000*/)
 
+//Wenn die Verweildauer größer 5 Sekunden (5000) ist Flag setzen
+setTimeout(function(){verweildauer = true;}, 5000)
+
 function noMoreSocialMedia() {
   /*$("#socialMedia").css('display','none');*/
   $("#socialMedia").addClass('fade-out-br');
@@ -125,6 +130,9 @@ function validateContactForm() {
     formValid = false;
     $("#errorName").html("Pflichtfeld");
     $("#name").css('border', '#e66262 1px solid');
+  } else {
+    $("#errorName").html("");
+    $("#name").css('border', 'revert');
   }
 
   if(formMail == "") {
@@ -133,6 +141,7 @@ function validateContactForm() {
     $("#email").css('border', '#e66262 1px solid');
   } else {
     $("#errorMail").html("");
+    $("#email").css('border', 'revert');
   }
 
   if (!regExMail.test(formMail)) {
@@ -141,6 +150,7 @@ function validateContactForm() {
     valid = false;
   } else {
     $("#errorMail").html("");
+    $("#userEmail").css('border', 'revert');
   }
 
   if(formContent == "") {
@@ -149,6 +159,7 @@ function validateContactForm() {
     $("#content").css('border', '#e66262 1px solid');
   } else {
     $("#errorContent").html("");
+    $("#content").css('border', 'revert');
   }
 
   if(!datenschutz.is(':checked')) {
@@ -164,6 +175,12 @@ function validateContactForm() {
     $("#spamschutz").css('border', '#e66262 1px solid');
   } else {
     $("#errorSpamschutz").html("");
+    $("#spamschutz").css('border', 'revert');
+  }
+
+  if(!verweildauer) {
+    formValid = false;
+    console.log("ERROR: Die Verweildauer auf der Website ist zu kurz um eine Anfrage zu senden.");
   }
 
   return formValid;
@@ -198,6 +215,7 @@ function toggleDarkMode(obj) {
     $("section h3").css("color", "white");
     $("section a").css("color", "white");
     $("form label").css("color", "white");
+    $("section a").css("color", "white");
     $("body").css("background-color", "#282c33")
   } else {
     console.log("No more Dark-Mode :(");
@@ -209,6 +227,7 @@ function toggleDarkMode(obj) {
     $("section h3").css("color", "black");
     $("section a").css("color", "black");
     $("form label").css("color", "black");
+    $("section a").css("color", "black");
   }
 }
 
