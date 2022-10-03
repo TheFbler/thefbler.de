@@ -520,6 +520,10 @@ header a {
 
 /* CONTACT */
 
+#statusMessage p {
+  font-size: 25px;
+}
+
 #contact form {
   width: 50%;
   margin: 0 auto;

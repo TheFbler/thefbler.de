@@ -125,31 +125,33 @@
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
       <?php
-        if(!empty($_POST['userName'])
-            && !empty($_POST['userEmail'])  && !empty($_POST['content'])) {
-          $name = $_POST['userName'];
-          $mail = $_POST['userEmail'];
-          $message = 'Name: ' . $name . ' // ' . $_POST['content'];
+        if(!empty($_POST['sendMail'])) {
+          if(!empty($_POST['userName'])
+              && !empty($_POST['userEmail'])  && !empty($_POST['content'])) {
+            $name = $_POST['userName'];
+            $mail = $_POST['userEmail'];
+            $message = 'Name: ' . $name . ' // ' . $_POST['content'];
 
-          $mailHeaders = array(
-                           'From' => $mail,
-                           'Reply-To' => $mail,
-                           'X-Mailer' => 'PHP/' . phpversion(),
-                           'MIME-Version' => '1.0',
-                           'Content-Type' => 'text/plain; charset=UTF-8'
-                         );
+            $mailHeaders = array(
+                             'From' => $mail,
+                             'Reply-To' => $mail,
+                             'X-Mailer' => 'PHP/' . phpversion(),
+                             'MIME-Version' => '1.0',
+                             'Content-Type' => 'text/plain; charset=UTF-8'
+                           );
 
-          if(mail('fabian@thefbler.de',
-                  'Kontaktformular: Neue Anfrage',
-                  $message,
-                  $mailHeaders)) {
-            echo '<div id="statusMessage"><p class="successContact centerText">Ihre Anfrage wurde erfolgreich gesendet!</p></div>';
-          } else {
-            echo '<div id="statusMessage"><p class="errorContact centerText">Leider gab es ein Problem beim Verarbeiten Ihrer Anfrage, bitte versuchen Sie es später erneut!</p></div>';
+            if(mail('fabian@thefbler.de',
+                    'Kontaktformular: Neue Anfrage',
+                    $message,
+                    $mailHeaders)) {
+              echo '<div id="statusMessage"><p class="successContact centerText">Ihre Anfrage wurde erfolgreich gesendet!</p></div>';
+            } else {
+              echo '<div id="statusMessage"><p class="errorContact centerText">Leider gab es ein Problem beim Verarbeiten Ihrer Anfrage, bitte versuchen Sie es später erneut!</p></div>';
+            }
           }
+        } else {
+          require_once "contact.php";
         }
-
-        require_once "contact.php";
       ?>
     </section>
 
