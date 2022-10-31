@@ -126,7 +126,7 @@ function validateContactForm() {
   var spamschutz = $('#spamschutz').val();
   var regExMail = new RegExp("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
 
-  if(formName == "") {
+  if(formName == "" || checkForSpamMarks(formName)) {
     formValid = false;
     $("#errorName").html("Pflichtfeld");
     $("#name").css('border', '#e66262 1px solid');
@@ -135,7 +135,7 @@ function validateContactForm() {
     $("#name").css('border', 'revert');
   }
 
-  if(formMail == "") {
+  if(formMail == "" || checkForSpamMarks(formContent)) {
     formValid = false;
     $("#errorMail").html("Pflichtfeld");
     $("#email").css('border', '#e66262 1px solid');
@@ -153,7 +153,7 @@ function validateContactForm() {
     $("#userEmail").css('border', 'revert');
   }
 
-  if(formContent == "") {
+  if(formContent == "" || checkForSpamMarks(formContent)) {
     formValid = false;
     $("#errorContent").html("Pflichtfeld");
     $("#content").css('border', '#e66262 1px solid');
@@ -184,6 +184,22 @@ function validateContactForm() {
   }
 
   return formValid;
+}
+
+// Gibt true zurück wenn ein Check anschlaegt
+function checkForSpamMarks(toCheck) {
+  var spam = false;
+
+  // diverse bekannte Patterns
+  const cryto = new RegExp('.*Cryto.*', 'i');
+  const crypto = new RegExp('.*Crypto.*', 'i');
+  const crypta = new RegExp('.*Crypta.*', 'i');
+  const telegram = new RegExp('.*Telegram.*', 'i');
+
+  spam = cryto.test(toCheck) || crypto.test(toCheck) || crypta.test(toCheck) ||
+         telegram.test(toCheck);
+
+  return spam;
 }
 
 function loadMoreItems() {
