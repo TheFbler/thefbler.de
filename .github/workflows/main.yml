@@ -1,9 +1,7 @@
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-name: Deploy website on push to master branch
+    branches: [ "release" ]
+name: Deploy website on push to release branch
 jobs:
   web-deploy:
     name: Deploy
