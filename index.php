@@ -38,32 +38,16 @@
             <img class="lazyload" data-src="img/avatar.jpg" alt="Portrait von Fabian" title="Fabian Clasen">
           </li>
           <li id="vorstellung">
-            <p>Servus, mein Name ist <strong>Fabian Clasen</strong>.
-              <br/><br/>Ich bin
-
-              <?php
+            <h2>Fabian Clasen</h2>
+            <p>he/him • <?php
                 $datetime1 = date_create('now');
                 $datetime2 = date_create('1997-03-28');
                 $interval = date_diff($datetime1, $datetime2);
                 echo $interval->format('%Y');
               ?>
-
-              Jahre alt und komme aus dem wunderschönen Markt Schönberg im
-              Bayerwald. Seit über fünf Jahren beschäftige ich mich mit der
-              Fotografie.
-              <br/><br/>
-              Meine erste Kamera habe ich mir im Januar 2016 gekauft. Eine
-              SONY a3000 mit Kit-Objektiv und einem manuellen Aufsteckblitz.
-              Die a3000 hat mich über das Jahr hinweg auf diversen
-              Veranstaltungen begleitet. Im Juni 2016 folgte meine
-              SONY a57 mit Kit-Objektiv. Im Laufe der Zeit kam ein neuer
-              Aufsteckblitz von Metz hinzu. Ein wichtiger Kauf fand Mitte 2018
-              statt, meine erste 50mm Festbrennweite (SAL50F18). Durch dieses
-              Objektiv machte ich meine ersten Erfahrungen mit Portraits. Nach
-              über drei Jahren und tausenden Bildern wurde es erneut Zeit für
-              ein Upgrade. Die Wahl fiel auf die SONY a6000 mit dem 16-50mm
-              Kit-Objektiv und einer 50mm Vollformat Festbrennweite. Hier möchte
-              ich euch einen Einblick in mein Portfolio geben.
+              <br/><br/>👨🏽‍💻 Senior IT Consultant<br/><br/>
+              politics 💬 • climbing 🧗🏼 • sourdough 🥖 • pizza 🍕 • photography 📸 • hiking 🥾<br/><br/>
+              🏡: Grafenau, BY
             </p>
           </li>
       </div>
