@@ -12,8 +12,7 @@
       <p>Besucht auch meine Social Media Kanäle</p>
       <a class="social2" target="_blank" rel="noopener" href="https://www.facebook.com/fabian.clasen.3"><i class="fab fa-facebook"></i></a>
       <a class="social2" target="_blank" rel="noopener" href="https://www.instagram.com/thefbler"><i class="fab fa-instagram"></i></a>
-      <a class="social2" target="_blank" rel="noopener" href="https://www.xing.com/profile/Fabian_Clasen2"><i class="fab fa-xing"></i></a>
-      <a class="social2" target="_blank" rel="noopener" href="https://twitter.com/thefbler"><i class="fab fa-twitter"></i></a><br/>
+      <a class="social2" target="_blank" rel="noopener" href="https://www.linkedin.com/in/fabian-clasen-024133245/"><i class="fab fa-linkedin"></i></a><br/>
       <img id="socialImage" class="lazyload" data-src="img/avatar.jpg" alt="Portrait von Fabian" title="Fabian Clasen">
     </div>
     <!-- Header per PHP einfügen -->
@@ -156,7 +155,7 @@
     </section>
 
     <!-- Footer per PHP einfügen -->
-    <?php echo file_get_contents("footer.html"); ?>
+    <?php require_once "footer.php"; ?>
     <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="js/mobile-menu.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
