@@ -457,7 +457,7 @@ header a {
   padding: 0;
   list-style: none;
   margin: auto;     /* Override defaults for lists */
-  width: 90%;     /* Get the row full width */
+  width: 70%;     /* Get the row full width */
 }
 
 #about li {
@@ -692,6 +692,7 @@ footer a i {
   }
 
   #about ul {
+    width: 90%;
     flex-wrap: wrap;
   }
 
