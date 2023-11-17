@@ -458,6 +458,7 @@ header a {
   list-style: none;
   margin: auto;     /* Override defaults for lists */
   width: 70%;     /* Get the row full width */
+  max-width: 890px;
 }
 
 #about li {
@@ -481,6 +482,7 @@ header a {
 #about p {
   margin-top: 0px;
   padding-left: 25px;
+  max-width: 600px;
 }
 
 #about h2 {

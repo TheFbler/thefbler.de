@@ -45,7 +45,7 @@
                 $interval = date_diff($datetime1, $datetime2);
                 echo $interval->format('%Y');
               ?>
-              <br/><br/>👨🏽‍💻 Senior IT Consultant<br/><br/>
+              <br/><br/>👨🏽‍💻 Senior IT Consultant @ msg for banking ag<br/><br/>
               politics 💬 • climbing 🧗🏼 • sourdough 🥖 • pizza 🍕 • photography 📸 • hiking 🥾<br/><br/>
               🏡: Grafenau, BY
             </p>
