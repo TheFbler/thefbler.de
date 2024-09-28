@@ -104,11 +104,11 @@
       </div>
     </section>
 
-    <section id="contact">
+    <!--<section id="contact">
       <h3 class="centerText">KONTAKT</h3>
       <hr/>
       <?php
-        if(!empty($_POST['sendMail'])) {
+        /*if(!empty($_POST['sendMail'])) {
           if(!empty($_POST['userName'])
               && !empty($_POST['userEmail'])  && !empty($_POST['content'])) {
             $name = $_POST['userName'];
@@ -134,9 +134,9 @@
           }
         } else {
           require_once "contact.php";
-        }
+        }*/
       ?>
-    </section>
+    </section>-->
 
     <!-- Footer per PHP einfügen -->
     <?php require_once "footer.php"; ?>
